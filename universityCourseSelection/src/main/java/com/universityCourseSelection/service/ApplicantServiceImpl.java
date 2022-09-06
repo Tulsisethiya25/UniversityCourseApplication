@@ -1,10 +1,11 @@
-package com.ucs.universityCourseSelection.service;
+package com.universityCourseSelection.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ucs.universityCourseSelection.entity.Applicant;
-import com.ucs.universityCourseSelection.exception.HandlingException;
-import com.ucs.universityCourseSelection.repository.ApplicantRepository;
+
+import com.universityCourseSelection.entity.Applicant;
+import com.universityCourseSelection.exception.HandlingException;
+import com.universityCourseSelection.repository.ApplicantRepository;
 @Service
 public class ApplicantServiceImpl implements ApplicantService {
 	@Autowired
@@ -12,7 +13,6 @@ public class ApplicantServiceImpl implements ApplicantService {
 	
 	@Override
 	public Applicant addApplicant(Applicant applicant) {
-//	applicant.setAdmission(applicant.getAdmission());
 		return applicantRepo.save(applicant);
 	}
 
@@ -43,8 +43,7 @@ public class ApplicantServiceImpl implements ApplicantService {
 
 	public ApplicantServiceImpl() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
+		}
 
 
 	public ApplicantServiceImpl(ApplicantRepository applicantRepo) {

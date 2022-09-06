@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.controller;
+package com.universityCourseSelection.controller;
 
 
 import java.time.LocalDate;
@@ -20,52 +20,49 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ucs.universityCourseSelection.entity.Admission;
-import com.ucs.universityCourseSelection.exception.HandlingException;
-import com.ucs.universityCourseSelection.service.AdmissionService;
+import com.universityCourseSelection.entity.Admission;
+import com.universityCourseSelection.exception.HandlingException;
+import com.universityCourseSelection.service.AdmissionService;
 
 @RestController
 public class AdmissionController {
 
 	@Autowired
-//    private AdmissionRepository admissionRepo;
     private AdmissionService admissionService;
 	
-	@PostMapping("/addApplicantAdmission")
+	@PostMapping("/addApplicantAdmission") // Annotation for mapping HTTP POST requests onto specific handler methods.
     public ResponseEntity<Admission> addApplicantAdmission(@Valid @RequestBody Admission admission) 
     {
-//		Admission a = admissionRepo.save(admission);
-		Admission ApplicantAddInfo = admissionService.save(admission);
+		Admission Applicantaddinfo = admissionService.save(admission);
 		    
-        return new ResponseEntity<Admission>(ApplicantAddInfo ,HttpStatus.CREATED);
+        return new ResponseEntity<>(Applicantaddinfo ,HttpStatus.CREATED);
        
     }
-	@DeleteMapping("/deleteApplicantAdmission")
+	@DeleteMapping("/deleteApplicantAdmission")// Annotation for mapping HTTP DELETE requests onto specific handler methods.
     public ResponseEntity<Admission> deleteApplicantAdmission(@RequestBody int admissionId) throws HandlingException 
     {
-		Admission ApplicantdeleteInfo = admissionService.deleteById(admissionId);
+		Admission ApplicantDeleteInfo= admissionService.deleteById(admissionId);
 		  
-        return new ResponseEntity<Admission>(ApplicantdeleteInfo ,HttpStatus.CREATED);
+        return new ResponseEntity<>(ApplicantDeleteInfo ,HttpStatus.CREATED);
        
     }
 
-	@PutMapping("/UpdateApplicantAdmission/{applicantId}/{courseId}")
+	@PutMapping("/UpdateApplicantAdmission/{applicantId}/{courseId}")// Annotation for mapping HTTP PUT  requests onto specific handler methods.
     public ResponseEntity<Admission> updateApplicantAdmission(@PathVariable int applicantId ,@PathVariable int courseId )throws HandlingException
     {
 		Admission Applicant = admissionService.updateApplicantCourse(applicantId,courseId);
 		   
-        return new ResponseEntity<Admission>(Applicant,HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(Applicant,HttpStatus.ACCEPTED);
        
     }
 
 	
-    @GetMapping("/showAllAdmissionByCourseId/{courseId}")
+    @GetMapping("/showAllAdmissionByCourseId/{courseId}")// Annotation for mapping HTTP GET requests onto specific handler methods.
     public List<Admission> findAllByCourseId(@PathVariable int courseId) 
     {
     		
-	    List<Admission> admissionList= admissionService.showAllAdmissionByCourseId(courseId);
+	    return admissionService.showAllAdmissionByCourseId(courseId);
 		   
-        return admissionList;
        
     }
 
@@ -73,10 +70,8 @@ public class AdmissionController {
     public List<Admission> findAllByCourseId(@PathVariable LocalDate admissionDate) 
       {
     		
-	    List<Admission> admissionList= admissionService.showAllAdmissionByDate(admissionDate);
+	    return admissionService.showAllAdmissionByDate(admissionDate);
 		   
-        return admissionList;       
-    }
-
+        }
 
 }

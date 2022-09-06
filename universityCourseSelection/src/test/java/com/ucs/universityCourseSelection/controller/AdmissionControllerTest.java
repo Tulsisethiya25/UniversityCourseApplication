@@ -12,10 +12,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.ucs.universityCourseSelection.entity.Admission;
-import com.ucs.universityCourseSelection.repository.AdmissionRepository;
-import com.ucs.universityCourseSelection.service.AdmissionService;
-import com.ucs.universityCourseSelection.service.AdmissionServicelmpl;
+
+import com.universityCourseSelection.entity.Admission;
+import com.universityCourseSelection.repository.AdmissionRepository;
+import com.universityCourseSelection.service.AdmissionService;
+import com.universityCourseSelection.service.AdmissionServicelmpl;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest

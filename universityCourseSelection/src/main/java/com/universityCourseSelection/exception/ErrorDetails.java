@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.exception;
+package com.universityCourseSelection.exception;
 
 import java.util.Date;
 

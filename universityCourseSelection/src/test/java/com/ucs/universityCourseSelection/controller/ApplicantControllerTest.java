@@ -12,12 +12,12 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.ucs.universityCourseSelection.entity.Admission;
-import com.ucs.universityCourseSelection.entity.Applicant;
-import com.ucs.universityCourseSelection.exception.HandlingException;
-import com.ucs.universityCourseSelection.repository.ApplicantRepository;
-import com.ucs.universityCourseSelection.service.ApplicantService;
-import com.ucs.universityCourseSelection.service.ApplicantServiceImpl;
+import com.universityCourseSelection.entity.Admission;
+import com.universityCourseSelection.entity.Applicant;
+import com.universityCourseSelection.exception.HandlingException;
+import com.universityCourseSelection.repository.ApplicantRepository;
+import com.universityCourseSelection.service.ApplicantService;
+import com.universityCourseSelection.service.ApplicantServiceImpl;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)

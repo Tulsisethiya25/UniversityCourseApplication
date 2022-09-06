@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.controller;
+package com.universityCourseSelection.controller;
 
 
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ucs.universityCourseSelection.entity.Applicant;
-import com.ucs.universityCourseSelection.exception.HandlingException;
-import com.ucs.universityCourseSelection.service.ApplicantService;
+import com.universityCourseSelection.entity.Applicant;
+import com.universityCourseSelection.exception.HandlingException;
+import com.universityCourseSelection.service.ApplicantService;
 @RestController
 public class ApplicantController {
 	@Autowired
@@ -22,9 +22,8 @@ public class ApplicantController {
 	@PostMapping("/addApplicant")
     public Applicant addApplicant(@RequestBody Applicant applicant) 
     {
-		Applicant ApplicantAddInfo = applicantService.addApplicant(applicant);
+		 return applicantService.addApplicant(applicant);
 		    
-        return ApplicantAddInfo;
        
     }
 	@DeleteMapping("/deleteApplicant/{applicantId}")
@@ -32,7 +31,7 @@ public class ApplicantController {
     {
 		Applicant ApplicantdeleteInfo = applicantService.deleteApplicantByApplicantId(applicantId);
 		  
-        return new ResponseEntity<Applicant>(ApplicantdeleteInfo ,HttpStatus.OK);
+        return new ResponseEntity<>(ApplicantdeleteInfo ,HttpStatus.OK);
        
     }
 	
@@ -40,20 +39,7 @@ public class ApplicantController {
 	    public Applicant findAllByCourseId(@PathVariable int applicantId) throws HandlingException 
 	      {
 	    		
-		    Applicant applicant= applicantService.viewApplicantByApplicantId(applicantId);
-			   
-	        return applicant;
-	       
+		    return applicantService.viewApplicantByApplicantId(applicantId); 
 	    }
-
-//	  @GetMapping("/viewAllApplicantsByStatus/{status}")
-//	    public List<Applicant> viewAllApplicantsByStatus(@PathVariable int status)  
-//	      {
-//	    		
-//		    List<Applicant> applicant= applicantService.findAllApplicantsById(status);
-//			   
-//	        return applicant;
-//	       
-//	    }
 
 }

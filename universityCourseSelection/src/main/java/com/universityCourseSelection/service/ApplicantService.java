@@ -1,11 +1,11 @@
-package com.ucs.universityCourseSelection.service;
+package com.universityCourseSelection.service;
 
 
 
 import org.springframework.stereotype.Service;
 
-import com.ucs.universityCourseSelection.entity.Applicant;
-import com.ucs.universityCourseSelection.exception.HandlingException;
+import com.universityCourseSelection.entity.Applicant;
+import com.universityCourseSelection.exception.HandlingException;
 @Service
 public interface ApplicantService {
 	public Applicant addApplicant(Applicant applicant );

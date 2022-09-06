@@ -1,14 +1,13 @@
-package com.ucs.universityCourseSelection;
+package com.universityCourseSelection;
 
 
 import org.springframework.boot.SpringApplication;
+
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.ucs.universityCourseSelection.repository.AdmissionRepository;
-import com.ucs.universityCourseSelection.repository.ApplicantRepository;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -19,7 +18,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.ucs.universityCourseSelection"})
+@ComponentScan(basePackages = {"com.universityCourseSelection"})
 @EnableSwagger2
 public class UniversityCourseSelectionApplication {
 
@@ -29,7 +28,7 @@ public class UniversityCourseSelectionApplication {
 	@Bean
 	   public Docket productApi() {
 	      return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.any())
-	         .apis(RequestHandlerSelectors.basePackage("com.ucs.universityCourseSelection.controller")).build().apiInfo(apiInfo());
+	         .apis(RequestHandlerSelectors.basePackage("com.universityCourseSelection.controller")).build().apiInfo(apiInfo());
 	   }
 	@SuppressWarnings("deprecation")
 	private ApiInfo apiInfo() 

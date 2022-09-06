@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.exception;
+package com.universityCourseSelection.exception;
 
 
 public class HandlingException extends Exception{

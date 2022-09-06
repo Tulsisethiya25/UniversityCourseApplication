@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.entity;
+package com.universityCourseSelection.entity;
 
 import javax.persistence.CascadeType;
 

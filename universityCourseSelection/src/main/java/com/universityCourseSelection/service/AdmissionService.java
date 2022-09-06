@@ -1,12 +1,12 @@
-package com.ucs.universityCourseSelection.service;
+package com.universityCourseSelection.service;
 
 
 import java.time.LocalDate;
 
 import java.util.List;
 
-import com.ucs.universityCourseSelection.entity.Admission;
-import com.ucs.universityCourseSelection.exception.HandlingException;
+import com.universityCourseSelection.entity.Admission;
+import com.universityCourseSelection.exception.HandlingException;
 
 public interface AdmissionService {
 	public Admission save(Admission admission);

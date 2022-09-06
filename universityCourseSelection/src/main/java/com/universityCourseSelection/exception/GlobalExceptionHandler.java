@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.exception;
+package com.universityCourseSelection.exception;
 
 import java.util.Date;
 
@@ -21,7 +21,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		
 		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), HttpStatus.FORBIDDEN);
 
-		return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.FORBIDDEN);
+		return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
 	
 	}
 }
