@@ -1,4 +1,4 @@
-package com.ucs.universityCourseSelection.controller;
+package com.universityCourseSelection.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
