@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.universityCourseSelection.dto.ApplicantDto;
 import com.universityCourseSelection.entity.Applicant;
 import com.universityCourseSelection.exception.HandlingException;
 import com.universityCourseSelection.service.ApplicantService;
@@ -20,8 +21,14 @@ public class ApplicantController {
 	@Autowired
 	ApplicantService applicantService;
 	@PostMapping("/addApplicant")
-    public Applicant addApplicant(@RequestBody Applicant applicant) 
+    public Applicant addApplicant(@RequestBody ApplicantDto applicantdto) 
     {
+		Applicant applicant=new Applicant();
+		applicant.setAdmission(applicantdto.getAdmission());
+		applicant.setContactNumber(applicantdto.getContactNumber());
+		applicant.setStudentDegree(applicantdto.getStudentDegree());
+		applicant.setStudentGraduationPercent(applicantdto.getStudentGraduationPercent());
+		applicant.setStudentname(applicantdto.getStudentname());
 		 return applicantService.addApplicant(applicant);
 		    
        

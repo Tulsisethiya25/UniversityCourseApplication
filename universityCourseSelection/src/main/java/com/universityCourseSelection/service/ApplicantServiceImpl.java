@@ -1,5 +1,7 @@
 package com.universityCourseSelection.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,11 +10,15 @@ import com.universityCourseSelection.exception.HandlingException;
 import com.universityCourseSelection.repository.ApplicantRepository;
 @Service
 public class ApplicantServiceImpl implements ApplicantService {
+	private static final Logger log = LoggerFactory.getLogger(AdmissionServicelmpl.class);
+	
 	@Autowired
 	private ApplicantRepository applicantRepo; 
 	
 	@Override
 	public Applicant addApplicant(Applicant applicant) {
+		log.info("enter ApplicantServiceImpl :: addAplicant()");
+		
 		return applicantRepo.save(applicant);
 	}
 

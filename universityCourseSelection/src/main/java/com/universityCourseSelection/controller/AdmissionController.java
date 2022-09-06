@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.universityCourseSelection.dto.AdmissionDto;
 import com.universityCourseSelection.entity.Admission;
 import com.universityCourseSelection.exception.HandlingException;
 import com.universityCourseSelection.service.AdmissionService;
@@ -31,8 +32,13 @@ public class AdmissionController {
     private AdmissionService admissionService;
 	
 	@PostMapping("/addApplicantAdmission") // Annotation for mapping HTTP POST requests onto specific handler methods.
-    public ResponseEntity<Admission> addApplicantAdmission(@Valid @RequestBody Admission admission) 
+    public ResponseEntity<Admission> addApplicantAdmission(@Valid @RequestBody AdmissionDto admissiondto) 
     {
+		Admission admission=new Admission();
+		admission.setApplicantId(admissiondto.getApplicantId());
+		admission.setAdmissionDate(admissiondto.getAdmissionDate());
+		admission.setCourseId(admissiondto.getCourseId());
+		admission.setStatus(admissiondto.getStatus());
 		Admission Applicantaddinfo = admissionService.save(admission);
 		    
         return new ResponseEntity<>(Applicantaddinfo ,HttpStatus.CREATED);
